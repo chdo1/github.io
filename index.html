@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ---- Open Graph 标签 ---- -->
-    <!-- 微信会抓取这些标签来生成预览卡片 -->
-    <title>Trap energy distribution in aircraft dielectric materials through surface potential decay method</title> <!-- 页面标题 -->
-    <meta name="description" content="了解飞机介电材料中的陷阱能级分布，以及如何通过表面电位衰减法进行研究，以提高飞行安全。" /> <!-- 页面描述 -->
-
-    <!-- 请将下面这个图片 URL 替换成您上传到 GitHub Pages 的图片 URL -->
-    <!-- 建议图片尺寸 1200x630 像素，比例 1.91:1 -->
-    <meta property="og:image" content="https://chdo1.github.io/github.io/images/daodan.jpg" />
-
-    <meta property="og:title" content="飞机介电材料的陷阱能级分布研究" /> <!-- 朋友圈卡片上显示的标题 -->
-    <meta property="og:description" content="这是一篇关于飞机绝缘材料电荷管理和飞行安全的重要研究，利用表面电位衰减法深入分析了陷阱能级分布。" /> <!-- 朋友圈卡片上显示的描述 -->
-    <meta property="og:url" content="https://chdo1.github.io/github.io/" /> <!-- 您要分享的GitHub Pages链接 -->
-    <meta property="og:type" content="article" /> <!-- 内容类型，article表示文章 -->
-    <meta property="og:site_name" content="chdo1的科研分享" /> <!-- 您的网站名称，可以自定义 -->
-
-    <!-- Twitter Card 标签 (可选，但建议添加，有些平台会识别) -->
+    
+    <!-- 核心Open Graph标签 -->
+    <meta property="og:title" content="飞机介电材料陷阱能级分布研究 - 表面电位衰减方法">
+    <meta property="og:description" content="研究飞机绝缘材料表面电荷沉积问题，通过表面电位衰减方法分析陷阱能级分布，提升飞行安全">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1a5276/ffffff?text=Aircraft+Dielectric+Research">
+    <meta property="og:url" content="https://chdo1.github.io/github.io/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="电静力学杂志">
+    
+    <!-- 微信专用标签 -->
+    <meta property="wechat:card" content="summary_large_image">
+    <meta property="wechat:title" content="飞机介电材料陷阱能级分布研究">
+    <meta property="wechat:description" content="表面电位衰减方法在航空绝缘材料电荷陷阱分析中的应用">
+    <meta property="wechat:image" content="https://via.placeholder.com/1200x630/1a5276/ffffff?text=Aircraft+Dielectric+Research">
+    
+    <!-- Twitter卡片（备用） -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="飞机介电材料的陷阱能级分布研究">
-    <meta name="twitter:description" content="这是一篇关于飞机绝缘材料电荷管理和飞行安全的重要研究，利用表面电位衰减法深入分析了陷阱能级分布。">
-    <meta name="twitter:image" content="https://chdo1.github.io/github.io/images/your-preview-image.jpg"> <!-- 再次指定图片URL -->
-
-    <!-- ---- 原始的 CSS 和其他 meta 标签 ---- -->
+    <meta name="twitter:title" content="飞机介电材料陷阱能级分布研究">
+    <meta name="twitter:description" content="研究飞机绝缘材料表面电荷沉积问题">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/1a5276/ffffff?text=Aircraft+Dielectric+Research">
+    
+    <!-- 其他重要meta标签 -->
+    <meta name="description" content="研究飞机绝缘材料表面电荷沉积问题，通过表面电位衰减方法分析陷阱能级分布">
+    <meta name="keywords" content="飞机介电材料,表面电位衰减,陷阱能级分布,电荷捕获,电气绝缘">
+    
+    <title>飞机介电材料陷阱能级分布研究 - 表面电位衰减方法</title>
     <style>
         * {
             margin: 0;
@@ -144,38 +147,11 @@
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(46, 134, 171, 0.3);
-            position: relative;
-            overflow: hidden;
         }
         
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(46, 134, 171, 0.4);
-        }
-        
-        .btn:active {
-            transform: translateY(-1px);
-        }
-        
-        .btn::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-        
-        .btn:hover::after {
-            transform: translateY(-50%) translateX(5px);
-        }
-        
-        .note {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            text-align: center;
-            margin-top: 15px;
         }
         
         .journal-info {
@@ -185,6 +161,17 @@
             text-align: center;
             font-size: 0.85em;
             color: #95a5a6;
+        }
+
+        /* 调试信息 */
+        .debug-info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.8em;
+            color: #856404;
         }
         
         @media (max-width: 600px) {
@@ -201,10 +188,13 @@
             }
         }
     </style>
-    <!-- ---- 引入了 Open Graph 标签 ---- -->
-    <link rel="canonical" href="https://chdo1.github.io/github.io/" /> <!-- 规范化链接 -->
 </head>
 <body>
+    <!-- 调试信息 -->
+    <div class="debug-info">
+        <strong>调试信息：</strong> 如果分享仍不显示卡片，请访问 <a href="http://debugx5.qq.com" target="_blank">http://debugx5.qq.com</a> 清除缓存
+    </div>
+
     <div class="container">
         <h1>Trap energy distribution in aircraft dielectric materials through surface potential decay method</h1>
         
@@ -226,10 +216,23 @@
             <a href="https://www.sciencedirect.com/science/article/pii/S0304388625001536" class="btn">View Full Paper on ScienceDirect</a>
         </div>
         
-        
         <div class="journal-info">
             Published in: Journal of Electrostatics | Available online 30 September 2025
         </div>
     </div>
+
+    <script>
+        // 添加页面访问统计（可选）
+        console.log('页面已加载 - Open Graph 标签已设置');
+        console.log('OG Title:', document.querySelector('meta[property="og:title"]').content);
+        console.log('OG Image:', document.querySelector('meta[property="og:image"]').content);
+        
+        // 如果仍然有问题，可以尝试动态设置
+        setTimeout(() => {
+            // 确保所有meta标签都已加载
+            const metaTags = document.querySelectorAll('meta');
+            console.log('Meta tags loaded:', metaTags.length);
+        }, 1000);
+    </script>
 </body>
 </html>
