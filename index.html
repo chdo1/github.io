@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 核心Open Graph标签 -->
+    <!-- 核心Open Graph标签 - 修复版本 -->
     <meta property="og:title" content="飞机介电材料陷阱能级分布研究 - 表面电位衰减方法">
     <meta property="og:description" content="研究飞机绝缘材料表面电荷沉积问题，通过表面电位衰减方法分析陷阱能级分布，提升飞行安全">
-    <meta property="og:image" content="https://chdo1.github.io/github.io/images/daodan.jpg?t=1759363506167">
+    <meta property="og:image" content="https://chdo1.github.io/github.io/images/daodan.jpg">
     <meta property="og:url" content="https://chdo1.github.io/github.io/">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website"> <!-- 修改为website -->
     <meta property="og:site_name" content="静电杂志">
     
-    <!-- 微信专用标签 -->
-    <meta property="wechat:card" content="summary_large_image">
-    <meta property="wechat:title" content="飞机介电材料陷阱能级分布研究">
-    <meta property="wechat:description" content="表面电位衰减方法在航空绝缘材料电荷陷阱分析中的应用">
-    <meta property="wechat:image" content="https://chdo1.github.io/github.io/images/daodan.jpg?t=1759363506167">
+    <!-- 微信专用标签 - 注意：微信不支持这些标签，使用标准OG标签 -->
+    <!-- 微信主要识别标准Open Graph标签，不识别wechat:前缀 -->
     
     <!-- Twitter卡片（备用） -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="飞机介电材料陷阱能级分布研究">
     <meta name="twitter:description" content="研究飞机绝缘材料表面电荷沉积问题">
-    <meta name="twitter:image" content="https://chdo1.github.io/github.io/images/daodan.jpg?t=1759363506167">
+    <meta name="twitter:image" content="https://chdo1.github.io/github.io/images/daodan.jpg">
     
     <!-- 其他重要meta标签 -->
     <meta name="description" content="研究飞机绝缘材料表面电荷沉积问题，通过表面电位衰减方法分析陷阱能级分布">
@@ -163,15 +160,53 @@
             color: #95a5a6;
         }
 
-        /* 调试信息 */
+        /* 调试信息样式 */
         .debug-info {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
             border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.8em;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.9em;
             color: #856404;
+        }
+        
+        .debug-info h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        
+        .debug-info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .debug-info li {
+            margin-bottom: 5px;
+        }
+        
+        .debug-info .success {
+            color: #155724;
+            background: #d4edda;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        .debug-info .warning {
+            color: #856404;
+            background: #fff3cd;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+        .debug-info .error {
+            color: #721c24;
+            background: #f8d7da;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
         }
         
         @media (max-width: 600px) {
@@ -199,6 +234,25 @@
             <div class="affiliation">Army Engineering University of PLA, Shijiazhuang Campus, Shijiazhuang, 050003, China</div>
         </div>
         
+        <!-- 调试信息区域 -->
+        <div class="debug-info">
+            <h3>微信分享调试信息</h3>
+            <p>如果微信分享时图片不显示，请检查以下问题：</p>
+            <ul>
+                <li>图片URL必须可公开访问</li>
+                <li>图片尺寸建议 300x300 像素或更大</li>
+                <li>微信有缓存，首次抓取后可能不会立即更新</li>
+                <li>图片文件大小不宜过大（建议小于300KB）</li>
+                <li>确保服务器支持HTTPS</li>
+            </ul>
+            <p>当前设置：</p>
+            <ul>
+                <li>OG图片URL: <span id="og-image-url">https://chdo1.github.io/github.io/images/daodan.jpg</span></li>
+                <li>图片状态: <span id="image-status">检测中...</span></li>
+                <li>图片尺寸: <span id="image-dimensions">检测中...</span></li>
+            </ul>
+        </div>
+        
         <div class="abstract-section">
             <div class="section-title">Abstract</div>
             <p class="abstract">Charge deposition on aircraft insulation material surfaces is challenging to discharge via electrostatic discharger, potentially leading to streamer discharge and interference with avionic systems. To mitigate this risk and enhance flight safety, this study investigates the trap energy distribution in aircraft dielectric materials using the surface potential decay method. Our research provides critical insights into charge trapping mechanisms and their implications for aircraft electrical system reliability.</p>
@@ -217,18 +271,54 @@
         </div>
     </div>
 
+    <!-- 隐藏的图片元素，帮助微信识别 -->
+    <div style="display: none;">
+        <img src="https://chdo1.github.io/github.io/images/daodan.jpg" alt="论文封面图" id="hidden-share-image">
+    </div>
+
     <script>
-        // 添加页面访问统计（可选）
-        console.log('页面已加载 - Open Graph 标签已设置');
-        console.log('OG Title:', document.querySelector('meta[property="og:title"]').content);
-        console.log('OG Image:', document.querySelector('meta[property="og:image"]').content);
-        
-        // 如果仍然有问题，可以尝试动态设置
-        setTimeout(() => {
-            // 确保所有meta标签都已加载
-            const metaTags = document.querySelectorAll('meta');
-            console.log('Meta tags loaded:', metaTags.length);
-        }, 1000);
+        // 检测图片状态
+        document.addEventListener('DOMContentLoaded', function() {
+            const imgUrl = 'https://chdo1.github.io/github.io/images/daodan.jpg';
+            const img = new Image();
+            
+            img.onload = function() {
+                document.getElementById('image-status').innerHTML = '<span class="success">✓ 图片可正常访问</span>';
+                document.getElementById('image-dimensions').textContent = `${this.naturalWidth} × ${this.naturalHeight} 像素`;
+                
+                // 检查图片尺寸是否合适
+                if (this.naturalWidth < 300 || this.naturalHeight < 300) {
+                    document.getElementById('image-dimensions').innerHTML += 
+                        ' <span class="warning">⚠ 图片尺寸偏小，建议使用300×300或更大尺寸</span>';
+                }
+            };
+            
+            img.onerror = function() {
+                document.getElementById('image-status').innerHTML = '<span class="error">✗ 图片无法访问</span>';
+                document.getElementById('image-dimensions').textContent = '未知';
+            };
+            
+            img.src = imgUrl;
+            
+            // 输出调试信息到控制台
+            console.log('微信分享调试信息:');
+            console.log('OG图片URL:', document.querySelector('meta[property="og:image"]').content);
+            console.log('页面URL:', document.querySelector('meta[property="og:url"]').content);
+            
+            // 动态添加时间戳参数，避免微信缓存问题
+            const timestamp = new Date().getTime();
+            const ogImage = document.querySelector('meta[property="og:image"]');
+            const currentSrc = ogImage.getAttribute('content');
+            
+            // 如果URL中没有时间戳参数，添加一个
+            if (!currentSrc.includes('?')) {
+                ogImage.setAttribute('content', currentSrc + '?t=' + timestamp);
+                document.getElementById('og-image-url').textContent = currentSrc + '?t=' + timestamp;
+                
+                // 同时更新隐藏图片的src
+                document.getElementById('hidden-share-image').src = currentSrc + '?t=' + timestamp;
+            }
+        });
     </script>
 </body>
 </html>
